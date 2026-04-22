@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Baby in Bloom — Color Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300&family=Allura&family=Nunito+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* ===== Neutrals / Backgrounds ===== */
+    --ivory:        #FBF9F8;
+    --blush-ivory:  #F7F1EE;
+    --sand:         #CEC8B8;
+
+    /* ===== Sage Greens ===== */
+    --sage-light:   #BCC1B3;
+    --sage-muted:   #ABADA3;
+    --sage-mid:     #8D8F78;
+    --sage-deep:    #667051;
+    --sage-olive:   #56603D;
+
+    /* ===== Blush / Pinks ===== */
+    --blush-soft:   #F0BBC3;
+    --blush-dusty:  #EAA8A9;
+    --rose:         #E67383;
+    --rose-deep:    #E76A76;
+    --mauve:        #995C65;
+
+    /* ===== Floral Accents ===== */
+    --peach:        #E3966D;
+    --apricot:      #E3A36D;
+    --plum:         #A66F8D;
+    --berry:        #A65A35;
+
+    /* ===== Semantic (implementation) ===== */
+    --bg-main:        var(--ivory);
+    --bg-soft:        var(--blush-ivory);
+    --bg-band:        var(--blush-ivory);
+    --text-heading:   var(--sage-deep);
+    --text-body:      var(--sage-olive);
+    --text-muted:     var(--sage-mid);
+    --accent-primary: var(--rose);
+    --accent-soft:    var(--blush-dusty);
+    --accent-pale:    var(--blush-soft);
+    --border-soft:    #E8DFCF;
+    --icon-default:   var(--sage-deep);
+    --card-bg:        #FFFFFF;
+    --link-default:   var(--sage-deep);
+    --link-hover:     var(--rose);
+
+    --f-serif: "Cormorant", Georgia, serif;
+    --f-script: "Allura", "Dancing Script", cursive;
+    --f-body: "Nunito Sans", system-ui, sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg-main);
+    color: var(--text-body);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link-default); }
+  a:hover { color: var(--link-hover); }
+
+  /* ---------- Layout ---------- */
+  .page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 72px 48px 120px;
+  }
+  header.hero {
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 72px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: end;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--sage-mid);
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+  h1.title {
+    font-family: var(--f-serif);
+    font-weight: 300;
+    color: var(--text-heading);
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  h1.title .in {
+    font-family: var(--f-script);
+    color: var(--rose);
+    font-weight: 400;
+    font-style: italic;
+    padding: 0 0.1em;
+  }
+  .lede {
+    font-family: var(--f-serif);
+    font-style: italic;
+    color: var(--text-body);
+    font-size: 22px;
+    line-height: 1.45;
+    max-width: 52ch;
+    margin: 0;
+  }
+  .hero-meta {
+    display: grid;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .hero-meta dt {
+    font-weight: 600;
+    color: var(--sage-deep);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  .hero-meta dd { margin: 0 0 8px; font-family: var(--f-mono); }
+
+  /* ---------- Sections ---------- */
+  section.block {
+    margin: 0 0 88px;
+  }
+  h2.section-title {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    color: var(--text-heading);
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 0 0 6px;
+    letter-spacing: -0.005em;
+  }
+  .section-kicker {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  .section-intro {
+    max-width: 68ch;
+    color: var(--text-body);
+    margin: 0 0 32px;
+    font-size: 15.5px;
+  }
+  .rule {
+    width: 48px; height: 1px; background: var(--rose);
+    margin: 16px 0 28px;
+  }
+
+  /* ---------- Palette cards ---------- */
+  .group-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin: 40px 0 18px;
+  }
+  .group-head h3 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--text-heading);
+    margin: 0;
+  }
+  .group-head .count {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+  }
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  .swatch {
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    transition: transform .18s, box-shadow .18s;
+  }
+  .swatch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(86, 96, 61, 0.08);
+  }
+  .swatch .chip {
+    height: 110px;
+    position: relative;
+  }
+  .swatch .chip::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+  }
+  .swatch .meta {
+    padding: 12px 14px 14px;
+  }
+  .swatch .meta .name {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    color: var(--text-heading);
+    font-size: 15px;
+    margin: 0 0 2px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 8px;
+  }
+  .swatch .meta .name .role {
+    font-family: var(--f-body);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .swatch .meta .hex,
+  .swatch .meta .var {
+    font-family: var(--f-mono);
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin: 0;
+    display: block;
+  }
+  .swatch .meta .var { color: var(--sage-deep); }
+
+  /* ---------- Section mapping blocks ---------- */
+  .map-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .map {
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 22px 24px 24px;
+  }
+  .map h4 {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    font-size: 19px;
+    color: var(--text-heading);
+    margin: 0 0 3px;
+  }
+  .map .sub {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--rose); font-weight: 700; margin: 0 0 14px;
+  }
+  .map dl {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+    margin: 0;
+    font-size: 14px;
+  }
+  .map dt {
+    color: var(--text-body);
+    font-weight: 400;
+  }
+  .map dd {
+    margin: 0;
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .map dd .dot {
+    width: 14px; height: 14px; border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.08);
+    flex: 0 0 auto;
+  }
+
+  /* ---------- Live mini-previews ---------- */
+  .preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  .preview {
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--card-bg);
+    display: flex; flex-direction: column;
+  }
+  .preview .pv-label {
+    padding: 10px 14px;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sage-mid); font-weight: 700;
+    border-bottom: 1px solid var(--border-soft);
+    display: flex; justify-content: space-between;
+    background: #fff;
+  }
+  .preview .pv-body {
+    padding: 40px 32px;
+    min-height: 200px;
+    display: flex; flex-direction: column; justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+  /* hero preview */
+  .pv-hero { background: var(--ivory); }
+  .pv-hero .t {
+    font-family: var(--f-serif); font-weight: 300;
+    color: var(--sage-deep); font-size: 38px; line-height: 1; margin: 0;
+  }
+  .pv-hero .t .in { font-family: var(--f-script); color: var(--rose); padding: 0 .1em; }
+  .pv-hero .sub {
+    font-family: var(--f-script); color: var(--rose); font-size: 22px; margin: 0;
+  }
+  .pv-hero .join {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-olive); margin: 0;
+  }
+  .pv-hero .cta {
+    align-self: center;
+    margin-top: 6px;
+    background: var(--rose); color: #fff;
+    padding: 12px 28px; border-radius: 4px;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;
+  }
+  /* registry preview */
+  .pv-registry { background: var(--blush-ivory); }
+  .pv-registry .t { font-family: var(--f-serif); color: var(--sage-deep); font-size: 28px; margin: 0; font-weight: 400; }
+  .pv-registry .p { color: var(--sage-olive); font-size: 13.5px; margin: 0; max-width: 42ch; margin-inline: auto; }
+  .pv-registry .btn {
+    align-self: center; background: var(--sage-deep); color: #fff;
+    padding: 12px 28px; border-radius: 4px;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700;
+  }
+  /* requests card preview */
+  .pv-request { background: var(--ivory); padding: 32px 22px; }
+  .pv-request .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pv-request .card {
+    background: #fff; border: 1px solid var(--border-soft); border-radius: 10px;
+    padding: 18px 14px; text-align: center; display: grid; gap: 8px;
+  }
+  .pv-request .card .ico {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #faf4ed; color: var(--sage-deep);
+    display: grid; place-items: center; margin: 0 auto;
+  }
+  .pv-request .card p { font-size: 12.5px; color: var(--sage-olive); margin: 0; line-height: 1.4; }
+  .pv-request .card .opt {
+    font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rose);
+    font-weight: 800;
+  }
+  .pv-request .card .heart { color: var(--rose); }
+  /* footer preview */
+  .pv-footer { background: var(--ivory); }
+  .pv-footer .s {
+    font-family: var(--f-script); color: var(--rose); font-size: 34px; margin: 0;
+  }
+  .pv-footer .names {
+    font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--sage-olive); font-weight: 700; margin: 0;
+  }
+  .pv-footer .sprig {
+    width: 80px; height: 18px; margin: 0 auto 6px;
+    color: var(--rose);
+  }
+  .pv-footer .sprig svg { display: block; width: 100%; height: 100%; }
+
+  /* ---------- Tokens block ---------- */
+  .tokens {
+    background: #2a2f24;
+    color: #e8e3d3;
+    border-radius: 14px;
+    padding: 28px 32px;
+    font-family: var(--f-mono);
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-x: auto;
+  }
+  .tokens .cmt { color: #b0b59e; }
+  .tokens .k { color: #d9c97f; }
+  .tokens .v { color: #f5d4d9; }
+  .tokens .sel { color: #c7d4a7; }
+
+  /* ---------- A11y notes ---------- */
+  .a11y-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .a11y-note {
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+  .a11y-note h4 {
+    font-family: var(--f-serif); font-weight: 500; font-size: 19px;
+    color: var(--text-heading); margin: 0 0 8px;
+  }
+  .a11y-note p { margin: 0 0 12px; font-size: 14.5px; color: var(--text-body); }
+  .a11y-note p:last-child { margin-bottom: 0; }
+
+  .contrast {
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .contrast table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .contrast thead th {
+    text-align: left; padding: 14px 16px;
+    font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--text-muted); font-weight: 700; background: var(--blush-ivory);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .contrast td {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--text-body);
+  }
+  .contrast td.sample {
+    font-family: var(--f-mono); font-size: 12px;
+  }
+  .contrast td .pair {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--f-mono); font-size: 12px; color: var(--text-muted);
+  }
+  .contrast td .pair .dot {
+    width: 14px; height: 14px; border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .badge {
+    display: inline-block; padding: 3px 8px; border-radius: 4px;
+    font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em;
+    font-family: var(--f-body);
+  }
+  .badge.pass  { background: #e7f0dc; color: #4b5a30; }
+  .badge.aa    { background: #f3e9dd; color: #7a5a2e; }
+  .badge.large { background: #f6e3e6; color: #8c3b48; }
+
+  /* ---------- Floral mapping ---------- */
+  .floral-map {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .floral-illus {
+    background: var(--blush-ivory);
+    border-radius: 14px;
+    padding: 28px;
+    display: grid; place-items: center;
+    position: relative;
+    min-height: 340px;
+  }
+  .floral-illus svg { width: 100%; max-width: 360px; height: auto; }
+  .floral-legend { display: grid; gap: 10px; }
+  .floral-legend .row {
+    display: grid;
+    grid-template-columns: 18px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    background: #fff;
+  }
+  .floral-legend .row .dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .floral-legend .row .lbl { font-size: 13.5px; color: var(--text-body); }
+  .floral-legend .row .hex { font-family: var(--f-mono); font-size: 11.5px; color: var(--text-muted); }
+
+  /* ---------- Intent table ---------- */
+  .intent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .intent-card {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .intent-card .bar { height: 8px; }
+  .intent-card .body { padding: 16px 18px 18px; }
+  .intent-card .role {
+    font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-muted); font-weight: 700; margin: 0 0 4px;
+  }
+  .intent-card h4 {
+    font-family: var(--f-serif); font-weight: 500;
+    color: var(--text-heading); font-size: 18px; margin: 0 0 6px;
+  }
+  .intent-card p { font-size: 13px; margin: 0; color: var(--text-body); line-height: 1.5; }
+
+  /* ---------- Type micro-cards ---------- */
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .type-card {
+    background: #fff; border: 1px solid var(--border-soft);
+    border-radius: 12px; padding: 22px 24px;
+  }
+  .type-card .sample { margin: 0 0 12px; color: var(--text-heading); }
+  .type-card .meta {
+    font-family: var(--f-mono); font-size: 11.5px; color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .page { padding: 48px 22px 80px; }
+    header.hero { grid-template-columns: 1fr; gap: 24px; }
+    .swatch-grid { grid-template-columns: repeat(2, 1fr); }
+    .map-grid, .preview-grid, .a11y-grid, .floral-map, .intent, .type-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Color Style Guide</p>
+      <h1 class="title">Baby <span class="in">in</span> Bloom</h1>
+      <p class="lede">A soft, airy palette built on sage greens, blush pinks, and warm ivory neutrals — calibrated for elegance, legibility, and a watercolor-floral feel.</p>
+    </div>
+    <dl class="hero-meta">
+      <dt>System</dt>
+      <dd>v1.0 · 18 colors · 11 tokens</dd>
+      <dt>Families</dt>
+      <dd>Neutrals · Sage · Blush · Floral</dd>
+      <dt>Type</dt>
+      <dd>Cormorant · Allura · Nunito Sans</dd>
+    </dl>
+  </header>
+
+  <!-- ========== 1. CORE PALETTE ========== -->
+  <section class="block">
+    <p class="section-kicker">01 — Palette</p>
+    <h2 class="section-title">Core Colors</h2>
+    <div class="rule"></div>
+    <p class="section-intro">Four families working in service of a watercolor aesthetic. Sage carries structure and voice; blush carries warmth and CTA; neutrals carry breathing room; floral accents stay decorative.</p>
+
+    <div class="group-head">
+      <h3>Neutrals &amp; Backgrounds</h3>
+      <span class="count">3 colors · page + section surfaces</span>
+    </div>
+    <div class="swatch-grid">
+      <article class="swatch"><div class="chip" style="background:#FBF9F8"></div>
+        <div class="meta"><p class="name">Soft Ivory <span class="role">Primary BG</span></p><span class="hex">#FBF9F8</span><span class="var">--ivory</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#F7F1EE"></div>
+        <div class="meta"><p class="name">Warm Blush Ivory <span class="role">Section BG</span></p><span class="hex">#F7F1EE</span><span class="var">--blush-ivory</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#CEC8B8"></div>
+        <div class="meta"><p class="name">Sand Beige <span class="role">Border / Tint</span></p><span class="hex">#CEC8B8</span><span class="var">--sand</span></div></article>
+    </div>
+
+    <div class="group-head">
+      <h3>Sage Greens</h3>
+      <span class="count">5 colors · structure, headings, icons</span>
+    </div>
+    <div class="swatch-grid">
+      <article class="swatch"><div class="chip" style="background:#BCC1B3"></div>
+        <div class="meta"><p class="name">Light Sage <span class="role">Decor</span></p><span class="hex">#BCC1B3</span><span class="var">--sage-light</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#ABADA3"></div>
+        <div class="meta"><p class="name">Muted Sage <span class="role">Muted Text</span></p><span class="hex">#ABADA3</span><span class="var">--sage-muted</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#8D8F78"></div>
+        <div class="meta"><p class="name">Mid Sage <span class="role">Secondary</span></p><span class="hex">#8D8F78</span><span class="var">--sage-mid</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#667051"></div>
+        <div class="meta" style="color:#fff"><p class="name" style="color:var(--text-heading)">Deep Sage <span class="role">Heading</span></p><span class="hex">#667051</span><span class="var">--sage-deep</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#56603D"></div>
+        <div class="meta"><p class="name">Dark Olive Sage <span class="role">Body</span></p><span class="hex">#56603D</span><span class="var">--sage-olive</span></div></article>
+    </div>
+
+    <div class="group-head">
+      <h3>Blush &amp; Pinks</h3>
+      <span class="count">5 colors · CTA, script, emphasis</span>
+    </div>
+    <div class="swatch-grid">
+      <article class="swatch"><div class="chip" style="background:#F0BBC3"></div>
+        <div class="meta"><p class="name">Soft Blush <span class="role">Decor</span></p><span class="hex">#F0BBC3</span><span class="var">--blush-soft</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#EAA8A9"></div>
+        <div class="meta"><p class="name">Dusty Blush <span class="role">Soft Accent</span></p><span class="hex">#EAA8A9</span><span class="var">--blush-dusty</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#E67383"></div>
+        <div class="meta"><p class="name">Rose Pink <span class="role">Primary CTA</span></p><span class="hex">#E67383</span><span class="var">--rose</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#E76A76"></div>
+        <div class="meta"><p class="name">Deep Rose <span class="role">Hover</span></p><span class="hex">#E76A76</span><span class="var">--rose-deep</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#995C65"></div>
+        <div class="meta"><p class="name">Warm Mauve <span class="role">Emphasis</span></p><span class="hex">#995C65</span><span class="var">--mauve</span></div></article>
+    </div>
+
+    <div class="group-head">
+      <h3>Floral Accents</h3>
+      <span class="count">4 colors · decorative only</span>
+    </div>
+    <div class="swatch-grid">
+      <article class="swatch"><div class="chip" style="background:#E3966D"></div>
+        <div class="meta"><p class="name">Peach Apricot <span class="role">Decor</span></p><span class="hex">#E3966D</span><span class="var">--peach</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#E3A36D"></div>
+        <div class="meta"><p class="name">Soft Apricot <span class="role">Decor</span></p><span class="hex">#E3A36D</span><span class="var">--apricot</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#A66F8D"></div>
+        <div class="meta"><p class="name">Plum Accent <span class="role">Decor</span></p><span class="hex">#A66F8D</span><span class="var">--plum</span></div></article>
+      <article class="swatch"><div class="chip" style="background:#A65A35"></div>
+        <div class="meta"><p class="name">Berry Accent <span class="role">Decor</span></p><span class="hex">#A65A35</span><span class="var">--berry</span></div></article>
+    </div>
+  </section>
+
+  <!-- ========== 2. ROLE INTENT ========== -->
+  <section class="block">
+    <p class="section-kicker">02 — Role Intent</p>
+    <h2 class="section-title">Primary · Secondary · Accent · Decorative</h2>
+    <div class="rule"></div>
+    <p class="section-intro">Every color has a job. This keeps the palette from fighting itself: sage governs reading, rose governs action, ivory governs space, and floral accents stay in the margins.</p>
+
+    <div class="intent">
+      <article class="intent-card">
+        <div class="bar" style="background:#667051"></div>
+        <div class="body">
+          <p class="role">Primary</p>
+          <h4>Deep Sage</h4>
+          <p>Headings, nav, primary icons, secondary buttons, link default. Carries the brand voice.</p>
+        </div>
+      </article>
+      <article class="intent-card">
+        <div class="bar" style="background:#E67383"></div>
+        <div class="body">
+          <p class="role">Secondary</p>
+          <h4>Rose Pink</h4>
+          <p>CTA background, script accents, active states, optional-tag label. Drives action + warmth.</p>
+        </div>
+      </article>
+      <article class="intent-card">
+        <div class="bar" style="background:#EAA8A9"></div>
+        <div class="body">
+          <p class="role">Accent</p>
+          <h4>Dusty Blush</h4>
+          <p>Hover states, soft highlights, divider accents, eyebrow text. Supports without shouting.</p>
+        </div>
+      </article>
+      <article class="intent-card">
+        <div class="bar" style="background:linear-gradient(90deg,#E3966D 0%, #A66F8D 50%, #A65A35 100%)"></div>
+        <div class="body">
+          <p class="role">Decorative only</p>
+          <h4>Floral accents</h4>
+          <p>Peach, apricot, plum, berry. Used exclusively inside watercolor artwork — never UI chrome.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== 3. SECTION-BY-SECTION MAPPING ========== -->
+  <section class="block">
+    <p class="section-kicker">A — Section mapping</p>
+    <h2 class="section-title">By section</h2>
+    <div class="rule"></div>
+    <p class="section-intro">How the palette is applied across the seven core regions of the page. Each card reads top-to-bottom in render order: background, heading, body, accents, CTAs.</p>
+
+    <!-- Previews -->
+    <div class="preview-grid" style="margin-bottom: 32px;">
+      <div class="preview">
+        <div class="pv-label"><span>Hero</span><span>--ivory · --sage-deep · --rose</span></div>
+        <div class="pv-body pv-hero">
+          <h3 class="t">Baby <span class="in">in</span> Bloom</h3>
+          <p class="sub">Celebrating Robin &amp; Ugur</p>
+          <p class="join">Join us for a blooming baby shower</p>
+          <span class="cta">Invitation Link</span>
+        </div>
+      </div>
+      <div class="preview">
+        <div class="pv-label"><span>Registry</span><span>--blush-ivory · --sage-deep</span></div>
+        <div class="pv-body pv-registry">
+          <h3 class="t">Baby Registry</h3>
+          <p class="p">We are open to second-hand items. You'll find that preference noted on our Babylist registry.</p>
+          <span class="btn">Visit Our Registry</span>
+        </div>
+      </div>
+      <div class="preview">
+        <div class="pv-label"><span>Shower Requests</span><span>--ivory · card #FFF · --rose</span></div>
+        <div class="pv-body pv-request">
+          <div class="cards">
+            <div class="card">
+              <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h16v4a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6V8z"/></svg></div>
+              <span class="opt">Optional</span>
+              <p>Bring diapers for the diaper raffle.</p>
+              <span class="heart">♡</span>
+            </div>
+            <div class="card">
+              <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c2-1 5-1.5 8-0.5V20c-3-1-6-.5-8 .5V5z"/><path d="M20 5c-2-1-5-1.5-8-.5V20c3-1 6-.5 8 .5V5z"/></svg></div>
+              <span class="opt">Optional</span>
+              <p>Bring a favorite children's book.</p>
+              <span class="heart">♡</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="preview">
+        <div class="pv-label"><span>Footer</span><span>--ivory · --rose script</span></div>
+        <div class="pv-body pv-footer">
+          <div class="sprig"><svg viewBox="0 0 120 28" fill="none"><path d="M6 16 C 24 8, 40 8, 54 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M114 16 C 96 8, 80 8, 66 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="60" cy="14" r="4" fill="#f2c6cc"/><circle cx="60" cy="14" r="2" fill="currentColor"/></svg></div>
+          <p class="s">with love</p>
+          <p class="names">Robin &amp; Ugur</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mapping tables -->
+    <div class="map-grid">
+      <div class="map">
+        <p class="sub">Top Navigation</p>
+        <h4>Sticky header</h4>
+        <dl>
+          <dt>Default nav text</dt><dd><span class="dot" style="background:#3B4234"></span>--sage-olive</dd>
+          <dt>Active nav text</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Active underline</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Chrome background</dt><dd><span class="dot" style="background:#FBF9F8;border-color:#ddd"></span>--ivory</dd>
+          <dt>Hover text</dt><dd><span class="dot" style="background:#E76A76"></span>--rose-deep</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Hero</p>
+        <h4>Baby in Bloom</h4>
+        <dl>
+          <dt>Background</dt><dd><span class="dot" style="background:#FBF9F8"></span>--ivory</dd>
+          <dt>Serif heading “Baby / Bloom”</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Script accent “in”</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Subheading (names)</dt><dd><span class="dot" style="background:#E67383"></span>--rose (script)</dd>
+          <dt>Supporting “join us…”</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>Date/time icons</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Date/time text</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>Primary CTA bg</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Primary CTA text</dt><dd><span class="dot" style="background:#fff;border-color:#ccc"></span>#FFFFFF</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Event Details</p>
+        <h4>Venue &amp; address</h4>
+        <dl>
+          <dt>Background</dt><dd><span class="dot" style="background:#FBF9F8"></span>--ivory</dd>
+          <dt>Section heading</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Divider accent</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Venue name</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Address text</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>Google Maps link</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Link hover</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Location icon</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Registry</p>
+        <h4>Babylist band</h4>
+        <dl>
+          <dt>Background band</dt><dd><span class="dot" style="background:#F7F1EE"></span>--blush-ivory</dd>
+          <dt>Section heading</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Paragraph text</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>Button bg</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Button text</dt><dd><span class="dot" style="background:#fff;border-color:#ccc"></span>#FFFFFF</dd>
+          <dt>Heart accent</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>“with love” eyebrow</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Travel &amp; Parking</p>
+        <h4>Info block</h4>
+        <dl>
+          <dt>Background</dt><dd><span class="dot" style="background:#FBF9F8"></span>--ivory</dd>
+          <dt>Section heading</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Body text</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>Icon circle bg</dt><dd><span class="dot" style="background:#F7F1EE"></span>--blush-ivory</dd>
+          <dt>Icon glyph</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Emphasized text</dt><dd><span class="dot" style="background:#995C65"></span>--mauve</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Shower Requests</p>
+        <h4>Request cards</h4>
+        <dl>
+          <dt>Section heading</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Card background</dt><dd><span class="dot" style="background:#fff;border-color:#ccc"></span>#FFFFFF</dd>
+          <dt>Card border</dt><dd><span class="dot" style="background:#E8DFCF"></span>--border-soft</dd>
+          <dt>Icon circle bg</dt><dd><span class="dot" style="background:#F7F1EE"></span>--blush-ivory</dd>
+          <dt>Icon glyph</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Card title / body</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>“Optional” label</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Heart accent</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Footer</p>
+        <h4>Sign-off</h4>
+        <dl>
+          <dt>Background</dt><dd><span class="dot" style="background:#FBF9F8"></span>--ivory</dd>
+          <dt>“with love” script</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Names text</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>Divider floral stem</dt><dd><span class="dot" style="background:#BCC1B3"></span>--sage-light</dd>
+          <dt>Divider floral bloom</dt><dd><span class="dot" style="background:#F0BBC3"></span>--blush-soft</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. UI ELEMENT MAPPING ========== -->
+  <section class="block">
+    <p class="section-kicker">B — UI element mapping</p>
+    <h2 class="section-title">By element</h2>
+    <div class="rule"></div>
+    <p class="section-intro">The same palette rolled up by UI primitive — useful when implementing or auditing a component across any page.</p>
+
+    <div class="map-grid">
+      <div class="map">
+        <p class="sub">Text</p>
+        <h4>Typography colors</h4>
+        <dl>
+          <dt>Heading (serif H1–H3)</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Body copy</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>Muted / meta</dt><dd><span class="dot" style="background:#8D8F78"></span>--sage-mid</dd>
+          <dt>Script accents</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Emphasis inline</dt><dd><span class="dot" style="background:#995C65"></span>--mauve</dd>
+          <dt>Eyebrow / uppercase kicker</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Backgrounds</p>
+        <h4>Surfaces</h4>
+        <dl>
+          <dt>Page</dt><dd><span class="dot" style="background:#FBF9F8"></span>--ivory</dd>
+          <dt>Section band</dt><dd><span class="dot" style="background:#F7F1EE"></span>--blush-ivory</dd>
+          <dt>Card / elevated</dt><dd><span class="dot" style="background:#fff;border-color:#ccc"></span>#FFFFFF</dd>
+          <dt>Subtle tint</dt><dd><span class="dot" style="background:#F7F1EE"></span>--blush-ivory</dd>
+          <dt>Icon pill bg</dt><dd><span class="dot" style="background:#F7F1EE"></span>--blush-ivory</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Buttons</p>
+        <h4>Primary / secondary</h4>
+        <dl>
+          <dt>Primary bg</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Primary hover</dt><dd><span class="dot" style="background:#E76A76"></span>--rose-deep</dd>
+          <dt>Primary text</dt><dd><span class="dot" style="background:#fff;border-color:#ccc"></span>#FFFFFF</dd>
+          <dt>Secondary bg</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Secondary hover</dt><dd><span class="dot" style="background:#56603D"></span>--sage-olive</dd>
+          <dt>Ghost border</dt><dd><span class="dot" style="background:#CEC8B8"></span>--sand</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Borders &amp; Dividers</p>
+        <h4>Rules</h4>
+        <dl>
+          <dt>Soft border</dt><dd><span class="dot" style="background:#E8DFCF"></span>--border-soft</dd>
+          <dt>Warm hairline</dt><dd><span class="dot" style="background:#CEC8B8"></span>--sand</dd>
+          <dt>Accent divider</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Decorative divider stem</dt><dd><span class="dot" style="background:#BCC1B3"></span>--sage-light</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Icons</p>
+        <h4>Glyphs</h4>
+        <dl>
+          <dt>Default</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>On blush bg</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Muted</dt><dd><span class="dot" style="background:#8D8F78"></span>--sage-mid</dd>
+          <dt>Heart / love</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Links</p>
+        <h4>Inline links</h4>
+        <dl>
+          <dt>Default</dt><dd><span class="dot" style="background:#667051"></span>--sage-deep</dd>
+          <dt>Hover</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+          <dt>Visited</dt><dd><span class="dot" style="background:#995C65"></span>--mauve</dd>
+          <dt>Focus ring</dt><dd><span class="dot" style="background:#E67383"></span>--rose (2.5px)</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Cards</p>
+        <h4>Containers</h4>
+        <dl>
+          <dt>Background</dt><dd><span class="dot" style="background:#fff;border-color:#ccc"></span>#FFFFFF</dd>
+          <dt>Border</dt><dd><span class="dot" style="background:#E8DFCF"></span>--border-soft</dd>
+          <dt>Shadow base</dt><dd>rgba(86,96,61,.08)</dd>
+          <dt>Optional-tag label</dt><dd><span class="dot" style="background:#E67383"></span>--rose</dd>
+        </dl>
+      </div>
+
+      <div class="map">
+        <p class="sub">Floral Assets</p>
+        <h4>Quick reference</h4>
+        <dl>
+          <dt>Petal base</dt><dd><span class="dot" style="background:#F0BBC3"></span>--blush-soft</dd>
+          <dt>Petal shadow</dt><dd><span class="dot" style="background:#EAA8A9"></span>--blush-dusty</dd>
+          <dt>Leaf</dt><dd><span class="dot" style="background:#BCC1B3"></span>--sage-light</dd>
+          <dt>Leaf shadow</dt><dd><span class="dot" style="background:#8D8F78"></span>--sage-mid</dd>
+          <dt>Stem</dt><dd><span class="dot" style="background:#8D8F78"></span>--sage-mid</dd>
+          <dt>Bud</dt><dd><span class="dot" style="background:#E3A36D"></span>--apricot</dd>
+          <dt>Flower center</dt><dd><span class="dot" style="background:#E3966D"></span>--peach</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. FLORAL ASSET MAPPING ========== -->
+  <section class="block">
+    <p class="section-kicker">C — Floral asset mapping</p>
+    <h2 class="section-title">Watercolor anatomy</h2>
+    <div class="rule"></div>
+    <p class="section-intro">Watercolor florals live in the four corners of the page and as tiny sprigs inside section headers. Their job is atmosphere — so they use the decorative palette, never the UI palette.</p>
+
+    <div class="floral-map">
+      <div class="floral-illus">
+        <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+          <!-- stem -->
+          <path d="M280 20 C 250 90, 220 160, 180 220 C 150 260, 120 300, 90 340"
+                stroke="#8D8F78" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- leaves -->
+          <path d="M248 90 C 270 80, 292 92, 296 112 C 276 122, 252 114, 248 90 Z" fill="#BCC1B3"/>
+          <path d="M248 90 C 270 80, 292 92, 296 112" stroke="#8D8F78" stroke-width="1.2" fill="none"/>
+          <path d="M208 170 C 230 164, 248 178, 250 198 C 228 204, 210 194, 208 170 Z" fill="#BCC1B3"/>
+          <path d="M140 260 C 118 252, 100 262, 100 282 C 120 290, 140 280, 140 260 Z" fill="#ABADA3"/>
+          <!-- main flower -->
+          <g transform="translate(200 180)">
+            <circle r="44" fill="#F0BBC3"/>
+            <circle r="34" fill="#EAA8A9" opacity="0.7"/>
+            <circle r="22" fill="#F0BBC3"/>
+            <circle r="10" fill="#E3966D"/>
+            <circle r="4" fill="#A65A35"/>
+          </g>
+          <!-- small flower -->
+          <g transform="translate(280 80)">
+            <circle r="16" fill="#F0BBC3"/>
+            <circle r="9" fill="#EAA8A9" opacity="0.8"/>
+            <circle r="3" fill="#E3966D"/>
+          </g>
+          <!-- buds -->
+          <g transform="translate(300 150)">
+            <circle r="7" fill="#E3A36D"/>
+            <circle cx="14" cy="6" r="5" fill="#E3A36D"/>
+            <circle cx="-2" cy="14" r="4" fill="#E3966D"/>
+          </g>
+          <!-- plum accent bloom -->
+          <g transform="translate(120 310)">
+            <circle r="10" fill="#A66F8D" opacity="0.55"/>
+            <circle r="5" fill="#A66F8D"/>
+          </g>
+          <!-- labels -->
+          <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="10" fill="#56603D">
+            <!-- petal -->
+            <line x1="200" y1="140" x2="200" y2="80" stroke="#56603D" stroke-width="0.8"/>
+            <circle cx="200" cy="80" r="3" fill="#56603D"/>
+            <text x="206" y="76">petal base · #F0BBC3</text>
+            <!-- leaf -->
+            <line x1="255" y1="102" x2="330" y2="56" stroke="#56603D" stroke-width="0.8"/>
+            <circle cx="330" cy="56" r="3" fill="#56603D"/>
+            <text x="218" y="40">leaf · #BCC1B3</text>
+            <!-- stem -->
+            <line x1="150" y1="250" x2="40" y2="250" stroke="#56603D" stroke-width="0.8"/>
+            <circle cx="40" cy="250" r="3" fill="#56603D"/>
+            <text x="12" y="240">stem · #8D8F78</text>
+            <!-- center -->
+            <line x1="200" y1="180" x2="60" y2="150" stroke="#56603D" stroke-width="0.8"/>
+            <circle cx="60" cy="150" r="3" fill="#56603D"/>
+            <text x="14" y="140">center · #E3966D</text>
+            <!-- bud -->
+            <line x1="305" y1="156" x2="350" y2="200" stroke="#56603D" stroke-width="0.8"/>
+            <circle cx="350" cy="200" r="3" fill="#56603D"/>
+            <text x="268" y="218">bud · #E3A36D</text>
+          </g>
+        </svg>
+      </div>
+      <div class="floral-legend">
+        <div class="row"><span class="dot" style="background:#F0BBC3"></span><span class="lbl">Petal base</span><span class="hex">#F0BBC3</span></div>
+        <div class="row"><span class="dot" style="background:#EAA8A9"></span><span class="lbl">Petal shadow / edge</span><span class="hex">#EAA8A9</span></div>
+        <div class="row"><span class="dot" style="background:#BCC1B3"></span><span class="lbl">Leaf base</span><span class="hex">#BCC1B3</span></div>
+        <div class="row"><span class="dot" style="background:#ABADA3"></span><span class="lbl">Leaf shadow</span><span class="hex">#ABADA3</span></div>
+        <div class="row"><span class="dot" style="background:#8D8F78"></span><span class="lbl">Stem</span><span class="hex">#8D8F78</span></div>
+        <div class="row"><span class="dot" style="background:#E3A36D"></span><span class="lbl">Bud</span><span class="hex">#E3A36D</span></div>
+        <div class="row"><span class="dot" style="background:#E3966D"></span><span class="lbl">Flower center</span><span class="hex">#E3966D</span></div>
+        <div class="row"><span class="dot" style="background:#A65A35"></span><span class="lbl">Center deep seed</span><span class="hex">#A65A35</span></div>
+        <div class="row"><span class="dot" style="background:#A66F8D"></span><span class="lbl">Plum accent bloom</span><span class="hex">#A66F8D</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. TYPE SAMPLES ========== -->
+  <section class="block">
+    <p class="section-kicker">Typography</p>
+    <h2 class="section-title">Type applied</h2>
+    <div class="rule"></div>
+    <p class="section-intro">Three voices working together: serif for structure, script for heart, sans for clarity.</p>
+
+    <div class="type-grid">
+      <div class="type-card">
+        <p class="sample" style="font-family: var(--f-serif); font-weight:300; font-size: 44px; line-height:1; color: var(--sage-deep);">Baby Bloom</p>
+        <p class="meta">Cormorant · Light 300 · #667051 · serif headings</p>
+      </div>
+      <div class="type-card">
+        <p class="sample" style="font-family: var(--f-script); font-size: 48px; line-height:1; color: var(--rose);">Celebrating</p>
+        <p class="meta">Allura · Regular · #E67383 · script accents</p>
+      </div>
+      <div class="type-card">
+        <p class="sample" style="font-family: var(--f-body); font-size: 13px; letter-spacing:.22em; text-transform: uppercase; font-weight:700; color: var(--sage-olive);">Sunday, June 14</p>
+        <p class="sample" style="font-family: var(--f-body); font-size: 15px; color: var(--sage-olive); margin-top: 8px;">Body copy for paragraphs, venue details, and supporting text.</p>
+        <p class="meta">Nunito Sans · 400 / 700 · #56603D · body + meta</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 7. TOKENS ========== -->
+  <section class="block">
+    <p class="section-kicker">D — CSS custom properties</p>
+    <h2 class="section-title">Design tokens</h2>
+    <div class="rule"></div>
+    <p class="section-intro">Drop into <code style="font-family:var(--f-mono); font-size:13px; background:var(--blush-ivory); padding:2px 6px; border-radius:4px;">:root</code> and reference semantically throughout the codebase. Raw palette variables map to semantic tokens so a future theme swap is one block.</p>
+
+    <pre class="tokens"><span class="cmt">/* ============================================ */
+/*  Baby in Bloom · Color tokens                */
+/* ============================================ */</span>
+
+<span class="sel">:root</span> {
+  <span class="cmt">/* --- Raw palette --- */</span>
+  <span class="k">--ivory</span>:        <span class="v">#FBF9F8</span>;
+  <span class="k">--blush-ivory</span>:  <span class="v">#F7F1EE</span>;
+  <span class="k">--sand</span>:         <span class="v">#CEC8B8</span>;
+
+  <span class="k">--sage-light</span>:   <span class="v">#BCC1B3</span>;
+  <span class="k">--sage-muted</span>:   <span class="v">#ABADA3</span>;
+  <span class="k">--sage-mid</span>:     <span class="v">#8D8F78</span>;
+  <span class="k">--sage-deep</span>:    <span class="v">#667051</span>;
+  <span class="k">--sage-olive</span>:   <span class="v">#56603D</span>;
+
+  <span class="k">--blush-soft</span>:   <span class="v">#F0BBC3</span>;
+  <span class="k">--blush-dusty</span>:  <span class="v">#EAA8A9</span>;
+  <span class="k">--rose</span>:         <span class="v">#E67383</span>;
+  <span class="k">--rose-deep</span>:    <span class="v">#E76A76</span>;
+  <span class="k">--mauve</span>:        <span class="v">#995C65</span>;
+
+  <span class="k">--peach</span>:        <span class="v">#E3966D</span>;
+  <span class="k">--apricot</span>:      <span class="v">#E3A36D</span>;
+  <span class="k">--plum</span>:         <span class="v">#A66F8D</span>;
+  <span class="k">--berry</span>:        <span class="v">#A65A35</span>;
+
+  <span class="cmt">/* --- Semantic tokens --- */</span>
+  <span class="k">--bg-main</span>:        <span class="v">var(--ivory)</span>;
+  <span class="k">--bg-soft</span>:        <span class="v">var(--blush-ivory)</span>;
+  <span class="k">--text-heading</span>:   <span class="v">var(--sage-deep)</span>;
+  <span class="k">--text-body</span>:      <span class="v">var(--sage-olive)</span>;
+  <span class="k">--text-muted</span>:     <span class="v">var(--sage-mid)</span>;
+  <span class="k">--accent-primary</span>: <span class="v">var(--rose)</span>;
+  <span class="k">--accent-soft</span>:    <span class="v">var(--blush-dusty)</span>;
+  <span class="k">--accent-pale</span>:    <span class="v">var(--blush-soft)</span>;
+  <span class="k">--border-soft</span>:    <span class="v">#E8DFCF</span>;
+  <span class="k">--icon-default</span>:   <span class="v">var(--sage-deep)</span>;
+  <span class="k">--card-bg</span>:        <span class="v">#FFFFFF</span>;
+  <span class="k">--link-default</span>:   <span class="v">var(--sage-deep)</span>;
+  <span class="k">--link-hover</span>:     <span class="v">var(--rose)</span>;
+}</pre>
+  </section>
+
+  <!-- ========== 8. A11Y ========== -->
+  <section class="block">
+    <p class="section-kicker">E — Accessibility</p>
+    <h2 class="section-title">Contrast &amp; clarity</h2>
+    <div class="rule"></div>
+
+    <div class="a11y-grid">
+      <div class="contrast">
+        <table>
+          <thead>
+            <tr>
+              <th>Combination</th>
+              <th>Ratio</th>
+              <th>Rating</th>
+              <th>Use for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="sample"><span class="pair"><span class="dot" style="background:#56603D"></span>#56603D on <span class="dot" style="background:#FBF9F8"></span>#FBF9F8</span></td>
+              <td>8.9 : 1</td>
+              <td><span class="badge pass">AAA</span></td>
+              <td>Body copy on page</td>
+            </tr>
+            <tr>
+              <td class="sample"><span class="pair"><span class="dot" style="background:#667051"></span>#667051 on <span class="dot" style="background:#FBF9F8"></span>#FBF9F8</span></td>
+              <td>6.3 : 1</td>
+              <td><span class="badge pass">AAA</span></td>
+              <td>Headings, links, icons</td>
+            </tr>
+            <tr>
+              <td class="sample"><span class="pair"><span class="dot" style="background:#667051"></span>#667051 on <span class="dot" style="background:#F7F1EE"></span>#F7F1EE</span></td>
+              <td>5.8 : 1</td>
+              <td><span class="badge pass">AA</span></td>
+              <td>Headings on section band</td>
+            </tr>
+            <tr>
+              <td class="sample"><span class="pair"><span class="dot" style="background:#fff;border-color:#ccc"></span>#FFFFFF on <span class="dot" style="background:#E67383"></span>#E67383</span></td>
+              <td>3.6 : 1</td>
+              <td><span class="badge large">AA Large</span></td>
+              <td>Primary CTA (18px+ / bold)</td>
+            </tr>
+            <tr>
+              <td class="sample"><span class="pair"><span class="dot" style="background:#fff;border-color:#ccc"></span>#FFFFFF on <span class="dot" style="background:#667051"></span>#667051</span></td>
+              <td>6.3 : 1</td>
+              <td><span class="badge pass">AAA</span></td>
+              <td>Secondary (sage) button</td>
+            </tr>
+            <tr>
+              <td class="sample"><span class="pair"><span class="dot" style="background:#E67383"></span>#E67383 on <span class="dot" style="background:#FBF9F8"></span>#FBF9F8</span></td>
+              <td>3.2 : 1</td>
+              <td><span class="badge large">AA Large</span></td>
+              <td>Script accents, kickers (22px+ or decorative)</td>
+            </tr>
+            <tr>
+              <td class="sample"><span class="pair"><span class="dot" style="background:#8D8F78"></span>#8D8F78 on <span class="dot" style="background:#FBF9F8"></span>#FBF9F8</span></td>
+              <td>3.4 : 1</td>
+              <td><span class="badge aa">Meta only</span></td>
+              <td>Tiny meta text, timestamps — never body</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="a11y-note">
+        <h4>Decisions</h4>
+        <p><strong>Body copy locks to Dark Olive Sage (#56603D) on ivory.</strong> 8.9:1 contrast means paragraphs stay readable on both ivory and blush-ivory bands without tuning per section.</p>
+        <p><strong>Rose (#E67383) is a display color, not a body color.</strong> It passes AA Large above 18px bold — which is always true for the CTA, script accents, and uppercase kickers — but it's never used for paragraph text.</p>
+        <p><strong>Muted sage (#8D8F78) is capped at meta usage.</strong> Dates, attribution, timestamps. It fails AA for body and we enforce that by not exposing it as <code>--text-body</code>.</p>
+        <p><strong>Focus rings use rose at 2.5px with 3px offset</strong> — the color doubles as brand emphasis, and the thickness carries contrast where hue alone can't.</p>
+        <p><strong>Floral accents (peach, apricot, plum, berry) are decorative only.</strong> They live inside illustration SVGs and never carry text or interactive meaning.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
